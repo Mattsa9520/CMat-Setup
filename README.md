@@ -15,7 +15,7 @@ if the file isn't already an executable just run:
 chmod +x cmat_setup.sh
 ```
 
-Then if  you want to be able to run the command from type the following command:
+Then if  you want to be able to run the command from anywhere type the following command:
 
 ```
 sudo cp cmat_setup.sh /usr/bin/cmat_setup
