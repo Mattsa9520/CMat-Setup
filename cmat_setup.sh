@@ -21,8 +21,6 @@ then
 fi
 
 project_name="$1"
-echo ${project_name}
-echo ${project_name:0:1}
 
 # create project root directory form argument
 mkdir -p ${project_name}
