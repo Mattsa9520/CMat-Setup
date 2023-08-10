@@ -26,33 +26,24 @@ bool DirectoryExists(const char* dirName)
 }
 
 // Concatonate strings to create the directory name from the program arguments
-char* MakeDirectoryName(const int argc, char** argv)
+void MakeDirectoryName(const int argc, char** argv, char* dirName)
 {
-    char* dirName = "";
-
     for (int i = 1; i < argc; i++)
     {
         if (argv[i][0] != '-') 
         {
-            char* arg = (char*)malloc(sizeof(argv[i]));
-            strcpy(arg, argv[i]);
+            // ensure there is no trailing "/"
+            if (argv[i][strlen(argv[i]) - 1] == '/') argv[i][strlen(argv[i]) - 1] = 0;
 
-            for (int j = 0; j < strlen(arg); j++)
-            {
-                if (arg[j] == '/') arg[j] = 0;
-            }
-
-            int newSize = strlen(dirName) + strlen(arg);
+            int newSize = sizeof(dirName) + strlen(argv[i]);
 
             char* newDirName = (char*)malloc(newSize);
             strcpy(newDirName, dirName);
-            strcat(newDirName, arg);
+            strcat(newDirName, argv[i]);
 
-            dirName = newDirName;
+            strcpy(dirName, newDirName);
         }
     }
-
-    return dirName;
 }
 
 // Create directory from directory name
