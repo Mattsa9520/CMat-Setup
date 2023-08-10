@@ -6,16 +6,10 @@ This is my simple C++ project setup script. All this script does is take in a re
 All you have to do is run the command:
 
 ```
-cmat_setup [/path/to/project_name]
+CMatt++ [/path/to/project_name]
 ```
 ## Setup 
-if the file isn't already an executable just run:
-
-```
-chmod +x cmat_setup.sh
-```
-
-Then if  you want to be able to run the command from anywhere type the following command:
+If  you want to be able to run the command from anywhere type the following command:
 
 ```
 sudo cp cmat_setup.sh /usr/bin/cmat_setup
