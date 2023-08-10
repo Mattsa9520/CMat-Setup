@@ -12,7 +12,7 @@ CMatt++ [/path/to/project_name]
 If  you want to be able to run the command from anywhere type the following command:
 
 ```
-sudo cp cmat_setup.sh /usr/bin/cmat_setup
+sudo cp CMatt++ /usr/local/bin/
 ```
 
 Then you're already to go!
