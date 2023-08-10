@@ -20,17 +20,23 @@
 */
 
 int ArgCountCheck(const int argc);
+bool CheckAbsPath(const int argc, char** argv);
 
 int main(int argc, char** argv)
 {
+    // make sure that there is more than one arg
     if (ArgCountCheck(argc) == -1) return -1;
 
-    char* dirName = "";
+    // allocate memory for directory name
+    char* dirName = (char*)malloc(256);
 
-    dirName = MakeDirectoryName(argc, argv);
+    // make the directory name from arguments
+    MakeDirectoryName(argc, argv, dirName);
 
+    // if directory already exists, or can't be created, quit execution
     if (!CreateDirectory(dirName)) return -1;
 
+    // Create necessary subdirectories
     AddSubDirectory(dirName, RESOURCE_DIR);
     AddSubDirectory(dirName, SOURCE_DIR);
     AddSubDirectory(dirName, INCLUDE_DIR);
@@ -38,11 +44,14 @@ int main(int argc, char** argv)
     AddSubDirectory(dirName, DEBUG_DIR);
     AddSubDirectory(dirName, RELEASE_DIR);
 
+    // create files
     CreateConfigFile(dirName);
     CreateMainFile(dirName);
 
+    // alert the user the projected was created successfully
     printf("Project [%s] Created Successfully\n", dirName);
 
+    // free allocated memofy
     free(dirName);
 
     return 0; 
