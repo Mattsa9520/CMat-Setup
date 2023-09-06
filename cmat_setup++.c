@@ -2,7 +2,8 @@
 
 #define RESOURCE_DIR "resources"
 #define SOURCE_DIR "src"
-#define INCLUDE_DIR "include"
+#define CPP_DIR "src/cpp"
+#define INCLUDE_DIR "src/include"
 #define TARGET_DIR "target"
 #define DEBUG_DIR "target/debug"
 #define RELEASE_DIR "target/release"
@@ -40,6 +41,7 @@ int main(int argc, char** argv)
     AddSubDirectory(dirName, RESOURCE_DIR);
     AddSubDirectory(dirName, SOURCE_DIR);
     AddSubDirectory(dirName, INCLUDE_DIR);
+    AddSubDirectory(dirName, CPP_DIR);
     AddSubDirectory(dirName, TARGET_DIR);
     AddSubDirectory(dirName, DEBUG_DIR);
     AddSubDirectory(dirName, RELEASE_DIR);

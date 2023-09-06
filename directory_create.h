@@ -122,10 +122,10 @@ void CreateConfigFile(const char* baseDir)
 
 void CreateMainFile(const char* baseDir)
 {
-    int fileNameSize = strlen(baseDir) + strlen("/src/main.cpp");
+    int fileNameSize = strlen(baseDir) + strlen("/src/cpp/main.cpp");
     char* fileName = (char*)malloc(fileNameSize);
     strcpy(fileName, baseDir);
-    strcat(fileName, "/src/main.cpp");
+    strcat(fileName, "/src/cpp/main.cpp");
 
     FILE* mainFile = fopen(fileName, "w");
 
